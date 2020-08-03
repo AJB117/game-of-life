@@ -1,0 +1,17 @@
+<div class="whole">
+  <button (click)="start()">Start</button>
+  <button (click)="stop()">Stop</button>
+  <button (click)="clear()">Clear</button>
+  <div class="board">
+    <div *ngFor="let row of board.board; let i = index">
+      <div *ngFor="let col of row; let j = index">
+        <div 
+          class="cell" 
+          (click)="color(i, j)"
+          [ngStyle]="{'background-color': board.board[j][i] ? 'black': 'white',
+                      'color': board.board[j][i] ? 'black' : 'white'}"
+        >{{col}}</div>
+      </div>  
+    </div>
+  </div>
+</div>

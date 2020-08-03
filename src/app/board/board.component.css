@@ -1,0 +1,14 @@
+.cell {
+  width: 20;
+  height: 20;
+  background-color: white;
+  border: solid 1px black;
+  text-align: center;
+}
+
+.board {
+  width: 50%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(50, 20px);
+}
