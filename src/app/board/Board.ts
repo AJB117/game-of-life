@@ -39,7 +39,7 @@ export class Board {
     if (!this.started) {
       return;
     }
-    const newBoard = this.board;
+    const oldBoard = this.board;
     for (let i = 0; i < this.rows; i++) {
       for (let j = 0; j < this.columns; j++) {
         let neighbors = 0;
@@ -47,13 +47,13 @@ export class Board {
           let newI = i + r;
           let newJ = j + c;
           if (newI >= 0 && newI < this.rows && newJ >= 0 && newJ < this.columns) {
-            neighbors += newBoard[newI][newJ];
+            neighbors += oldBoard[newI][newJ];
           }
         });
-        if (newBoard[i][j] && (neighbors < 2 || neighbors > 3)) {
+        if (oldBoard[i][j] && (neighbors < 2 || neighbors > 3)) {
           console.log(`killing cell with ${neighbors} neighbors at ${i},${j}`);
           this.board[i][j] = 0;
-        } else if (newBoard[i][j] === 0 && neighbors === 3) {
+        } else if (oldBoard[i][j] === 0 && neighbors === 3) {
           console.log(`spawning cell with ${neighbors} neighbors at ${i},${j}`);
           this.board[i][j] = 1;
         }
