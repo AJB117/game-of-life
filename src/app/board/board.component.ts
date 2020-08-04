@@ -15,7 +15,6 @@ export class BoardComponent implements OnInit {
   ngOnInit(): void {}
 
   color(row: number, col: number): void {
-    console.log(`${row}, ${col}`)
     this.board.color(col, row);
   }
 

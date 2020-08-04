@@ -9,7 +9,7 @@
           class="cell" 
           (click)="color(i, j)"
           [ngStyle]="{'background-color': board.board[j][i] ? 'black': 'white',
-                      'color': board.board[j][i] ? 'black' : 'white'}"
+                      'color'           : board.board[j][i] ? 'black' : 'white'}"
         >{{col}}</div>
       </div>  
     </div>
